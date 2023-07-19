@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!/_static/server/pages/*
+
+
+# ...even if they are in subdirectories
+!*/
