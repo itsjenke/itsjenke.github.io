@@ -9,7 +9,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   card: {
-    height: rem(650),
+    height: rem(590),
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
@@ -61,31 +61,31 @@ function Card({ image, category }: CardProps) {
 const data = [
   {
     image:
-      'semesterflyer.jpg',
+      'semesterflyer.webp',
     title: 'Best places to visit this winter',
     category: 'tourism',
   },
   {
     image:
-      'aufbruch.jpg',
+      'aufbruch.webp',
     title: 'Best forests to visit in North America',
     category: 'nature',
   },
   {
     image:
-      'b-side.jpg',
+      'b-side.webp',
     title: 'Hawaii beaches review: better than you think',
     category: 'beach',
   },
   {
     image:
-      'long-movie.jpg',
+      'long-movie.webp',
     title: 'Mountains at night: 12 best locations to enjoy the view',
     category: 'nature',
   },
   {
     image:
-      'phase_the_future.jpg',
+      'phase_the_future.webp',
     title: 'Aurora in Norway: when to visit for best experience',
     category: 'nature',
   },

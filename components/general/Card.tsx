@@ -4,13 +4,13 @@ const mockdata = [
   {
     title: 'Top 10 places to visit in Norway this summer',
     image:
-      'kulturloge.jpeg',
+      'kulturloge.webp',
     date: 'August 18, 2022',
   },
   {
     title: 'Best forests to visit in North America',
     image:
-      'eintrittfrei.jpeg',
+      'eintrittfrei.webp',
     date: 'August 27, 2022',
   },
 ];
