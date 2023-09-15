@@ -17,7 +17,7 @@ export function Video() {
             Your browser does not support the video tag.
       </video>
       <Overlay
-                gradient="linear-gradient(145deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 100%)"
+                gradient="linear-gradient(145deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 30%)"
                 opacity={0.85}
             />
     </AspectRatio>

@@ -9,7 +9,7 @@ import {
     rem,
     Container,
   } from '@mantine/core';
-  import { IconFlame, IconFileCode } from '@tabler/icons-react';
+  import { IconBorderRadius, IconPalette, IconWorldUpload } from '@tabler/icons-react';
   
   const useStyles = createStyles((theme) => ({
     wrapper: {
@@ -17,7 +17,11 @@ import {
       position: 'relative',
       paddingTop: theme.spacing.xl,
       paddingBottom: theme.spacing.xl,
-      background: theme.primaryColor
+      paddingLeft: theme.spacing.xs,
+      paddingRight: theme.spacing.xs,
+      background: theme.colors.dark,
+      marginBottom: theme.spacing.xl,
+      borderRadius: 7
     },
   
     title: {
@@ -32,12 +36,12 @@ import {
   
   const features = [
     {
-      icon: IconFileCode,
+      icon: IconPalette,
       title: 'Grafikdesign',
       description: 'Hier steht was über Grafikdesign, vielleicht was ich schon gemacht hab oder was ich eben so anbiete. bin noch unsicher okay Bluni.',
     },
     {
-      icon: IconFlame,
+      icon: IconWorldUpload,
       title: 'Webentwicklung',
       description:
         'Hier steht was über Webentwickling, vielleicht was ich schon gemacht hab oder was ich eben so anbiete. bin noch unsicher okay Bluni.',
@@ -49,20 +53,29 @@ import {
   
     const items = features.map((feature) => (
       <div key={feature.title}>
-        <ThemeIcon
-          size={44}
-          radius="md"
-          variant="filled"
-          color= '#64EBC4'
-        >
-          <feature.icon size={rem(26)} stroke={1.5} color='#0A0E2D'/>
-        </ThemeIcon>
-        <Text fz="lg" mt="sm" fw={500}>
-          {feature.title}
-        </Text>
-        <Text fz="sm">
-          {feature.description}
-        </Text>
+        <Grid gutter="xl" align="flex-end">
+          <Grid.Col span="content">
+          <ThemeIcon
+            size={50}
+            radius="md"
+            variant="filled"
+            color= '#64EBC4'
+          >
+            <feature.icon size={rem(36)} stroke={1.5} color='#0A0E2D'/>
+          </ThemeIcon>
+          </Grid.Col>
+          <Grid.Col span="content">
+          <Text fz="xl" mt="sm" fw={500}>
+            {feature.title}
+          </Text>
+          </Grid.Col>
+        
+          <Grid.Col>  
+          <Text fz="sm">
+            {feature.description}
+          </Text>
+          </Grid.Col>
+        </Grid> 
       </div>
     ));
   
