@@ -1,10 +1,4 @@
 # Ignore everything
-*
-
-# But not these files...
-!.gitignore
-!/out/*
-
-
-# ...even if they are in subdirectories
-!*/
+node_modules/
+.github/
+_static/

@@ -1,0 +1,31 @@
+{
+  "name": "itsjenke.github.io",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next export"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/server": "^11.11.0",
+    "@mantine/carousel": "^6.0.17",
+    "@mantine/core": "^6.0.17",
+    "@mantine/ds": "^6.0.17",
+    "@mantine/hooks": "^6.0.17",
+    "@mantine/next": "^6.0.17",
+    "@tabler/icons-react": "^2.26.0",
+    "@types/node": "20.4.2",
+    "@types/react": "18.2.15",
+    "@types/react-dom": "18.2.7",
+    "eslint": "8.45.0",
+    "eslint-config-next": "13.4.10",
+    "next": "13.4.10",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "5.1.6"
+  }
+}
