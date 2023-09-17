@@ -1,5 +1,6 @@
 import { createStyles, Overlay, Container, Title, Button, Text, rem, AspectRatio } from '@mantine/core';
 import { useMediaQuery, useViewportSize } from '@mantine/hooks';
+import Link from 'next/link';
 
 const useStyles = createStyles((theme) => ({
 
@@ -53,7 +54,7 @@ const useStyles = createStyles((theme) => ({
 
     [theme.fn.smallerThan('sm')]: {
       maxWidth: '100%',
-      fontSize: theme.fontSizes.md,
+      fontSize: theme.fontSizes.xl,
     },
   },
 
@@ -97,14 +98,15 @@ export function HeroContentLeft() {
       </div>
 
       <Container className={classes.container} size="xl">
-        <Title className={classes.title}><mark className={classes.mark}>Hi.</mark></Title>
-        <Text className={classes.description} size="xl" mt="xl"><mark className={classes.mark}>
-        Ich bin Jörg und den restlichen Text wird meine persönliche SEO-Expertin formulieren. 
-Freu mich schon drauf!</mark>
-        </Text>
-        <Button variant="outline" color="cyan" size="md" className={classes.control}>
+        <Text className={classes.title}><mark className={classes.mark}>Hi.</mark></Text>
+        <Title className={classes.description}  weight={500} size="h3" mt="xl"><mark className={classes.mark}>
+        Ich bin Jörg, dein Experte für schnörkelose Webentwicklung und Grafikdesign. </mark>
+        </Title>
+        <Link href="mailto:hello@jenke.xyz" >
+        <Button variant="filled" color="cyan" size="md" className={classes.control}>
           Schreib mir
         </Button>
+        </Link>
       </Container>
       <div>
     </div>

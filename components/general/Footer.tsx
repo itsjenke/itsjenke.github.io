@@ -1,6 +1,7 @@
-import { createStyles, Container, Group, ActionIcon, rem, Text } from '@mantine/core';
-import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
+import { createStyles, Container, Group, ActionIcon, rem, Text, NavLink } from '@mantine/core';
+import { IconBrandLinkedin, IconBrandInstagram } from '@tabler/icons-react';
 import Logo from "../graphic/Logo"; 
+import Link from 'next/link';
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -27,6 +28,11 @@ const useStyles = createStyles((theme) => ({
       marginTop: theme.spacing.md,
     },
   },
+
+  link: {
+    textDecoration: 'none',
+    color: theme.white
+  }
 }));
 
 export function FooterSocial() {
@@ -36,17 +42,20 @@ export function FooterSocial() {
     <div className={classes.footer}>
       <Container size="xl" className={classes.inner}>
       <Logo />
-        <Text><a href="/impressum">Impressum</a></Text>
+        <Text>
+          <Link className={classes.link} href="/impressum">Impressum</Link>
+        </Text>
         <Group spacing={0} className={classes.links} position="right" noWrap>
-          <ActionIcon size="lg">
-            <IconBrandTwitter size="1.05rem" stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg">
-            <IconBrandYoutube size="1.05rem" stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg">
-            <IconBrandInstagram size="1.05rem" stroke={1.5} />
-          </ActionIcon>
+          <Link href="https://www.linkedin.com/in/j%C3%B6rg-jenke-5a01b4189/">
+            <ActionIcon size="lg">
+              <IconBrandLinkedin size="2.05rem" stroke={1} />
+            </ActionIcon>
+          </Link>
+          <Link href="https://www.instagram.com/itsjenke/">
+            <ActionIcon size="lg">
+              <IconBrandInstagram size="2.05rem" stroke={1} />
+            </ActionIcon>
+          </Link>
         </Group>
       </Container>
     </div>

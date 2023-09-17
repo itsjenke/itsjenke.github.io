@@ -28,7 +28,7 @@ const { classes } = useStyles();
           </div>
         </Text>
         <Space h="md" />
-        <Text fz="md">E-Mail: joerg.jenke@gmail.com</Text>
+        <Text fz="md">E-Mail: hello@jenke.xyz</Text>
         <Space h="xs" />
         <Text fw={700} fz="lg" mt="xl">Haftungsausschluss</Text>
         <Space h="xs" />

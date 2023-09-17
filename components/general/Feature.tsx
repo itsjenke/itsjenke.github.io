@@ -19,7 +19,7 @@ import {
       paddingBottom: theme.spacing.xl,
       paddingLeft: theme.spacing.xs,
       paddingRight: theme.spacing.xs,
-      background: theme.colors.dark,
+      background: "#1971C2",
       marginBottom: theme.spacing.xl,
       borderRadius: 7
     },

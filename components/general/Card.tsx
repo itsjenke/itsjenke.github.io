@@ -8,6 +8,7 @@ const mockdata = [
       'kulturloge.webp',
     date: 'August 18, 2022',
     icon: IconBrandWordpress,
+    alt: 'KulturLoge Dresden Screenshot'
   },
   {
     title: 'Best forests to visit in North America. Best forests to visit in North America. Best forests to visit in North America. Best forests to visit in North America',
@@ -15,6 +16,7 @@ const mockdata = [
       'eintrittfrei.webp',
     date: 'August 27, 2022',
     icon: IconBrandWordpress,
+    alt: 'EintrittFrei Kalender Screenshot'
   },
 ];
 
@@ -54,7 +56,7 @@ export function ArticlesCardsGrid() {
       <Grid gutter={20}>  
         <Grid.Col md={6} lg={4}>
           <AspectRatio ratio={1342 / 995}>
-            <Image src={article.image} className={classes.image} />
+            <Image src={article.image} className={classes.image} alt={article.alt} />
           </AspectRatio>
         </Grid.Col>  
         <Grid.Col md={6} lg={4}>
