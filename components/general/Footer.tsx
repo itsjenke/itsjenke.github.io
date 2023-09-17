@@ -36,6 +36,7 @@ export function FooterSocial() {
     <div className={classes.footer}>
       <Container size="xl" className={classes.inner}>
       <Logo />
+        <Text><a href="/impressum">Impressum</a></Text>
         <Group spacing={0} className={classes.links} position="right" noWrap>
           <ActionIcon size="lg">
             <IconBrandTwitter size="1.05rem" stroke={1.5} />
