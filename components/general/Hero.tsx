@@ -89,7 +89,7 @@ export function HeroContentLeft() {
     <div className={classes.video}  style={{ height:height - 100}} >
       <div style={{ position: 'relative', zIndex: 0, height:height - 100 }}>
         <AspectRatio ratio={isMobile ? 9 / 16 : 16 / 9}>
-          <video style={{ height:height - 100 }} muted autoPlay loop id="video-id" className="video">
+          <video style={{ height:height - 100, background: "#000" }} muted autoPlay loop poster="poster.webp" id="video-id" className="video">
             <source src={videoSource} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
