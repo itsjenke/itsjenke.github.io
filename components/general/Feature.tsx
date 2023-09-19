@@ -9,7 +9,8 @@ import {
     rem,
     Container,
   } from '@mantine/core';
-  import { IconBorderRadius, IconPalette, IconWorldUpload } from '@tabler/icons-react';
+import { useMediaQuery } from '@mantine/hooks';
+  import { IconPalette, IconWorldUpload } from '@tabler/icons-react';
   
   const useStyles = createStyles((theme) => ({
     wrapper: {
@@ -50,6 +51,7 @@ import {
   
   export function FeaturesTitle() {
     const { classes } = useStyles();
+    const isMobile = useMediaQuery('(max-width: 768px)');
   
     const items = features.map((feature) => (
       <div key={feature.title}>
@@ -81,7 +83,7 @@ import {
   
     return (
       <Container size="xl" >
-        <Grid gutter={80} className={classes.wrapper}>
+        <Grid gutter={isMobile ? 30 : 80} className={classes.wrapper}>
           <Col span={12} md={5}>
             <Title className={classes.title} order={2}>
               Hier steht ein wichtiger Einleitungstext
