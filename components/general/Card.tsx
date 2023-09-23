@@ -26,6 +26,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   card: {
+    background: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
     transition: 'transform 150ms ease, box-shadow 150ms ease',
     marginTop: theme.spacing.xl,
     '&:hover': {

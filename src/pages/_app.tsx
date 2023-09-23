@@ -29,9 +29,31 @@ export default function App(props: AppProps) {
           colorScheme,
           colors: {
             // Add your color
-            dark: ['#E9EDFC', '#C1CCF6', '#99ABF0' /* ... */],
+            dark: [
+              "#eef0fb",
+              "#d9dcf1",
+              "#b0b5e5",
+              "#848ddb",
+              "#313995",
+              "#4954cc",
+              "#070c3a",
+              "#0A0E2D",
+              "#0A0E2D",
+              "#0A0E2D"
+            ],
             // or replace default theme color
-            light: ['#E9EDFC', '#C1CCF6', '#99ABF0' /* ... */],
+            light: [
+              "#f5f5f5",
+              "#e7e7e7",
+              "#cdcdcd",
+              "#b2b2b2",
+              "#9a9a9a",
+              "#8b8b8b",
+              "#848484",
+              "#717171",
+              "#656565",
+              "#575757"
+            ],
 
           },
   

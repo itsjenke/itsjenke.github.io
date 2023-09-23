@@ -60,8 +60,7 @@ const useStyles = createStyles((theme) => ({
 
   control: {
     marginTop: `calc(${theme.spacing.xl} * 1.5)`,
-    // background: '#0A0E2D',
-    // color: '#64EBC4',
+    background: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[5],
     borderRadius: 7,
 
     [theme.fn.smallerThan('sm')]: {

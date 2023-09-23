@@ -8,6 +8,7 @@ import {
     Col,
     rem,
     Container,
+    useMantineTheme,
   } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
   import { IconPalette, IconWorldUpload } from '@tabler/icons-react';
@@ -20,9 +21,9 @@ import { useMediaQuery } from '@mantine/hooks';
       paddingBottom: theme.spacing.xl,
       paddingLeft: theme.spacing.xs,
       paddingRight: theme.spacing.xs,
-      background: "#1971C2",
       marginBottom: theme.spacing.xl,
-      borderRadius: 7
+      borderRadius: 7,
+      background: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
     },
   
     title: {
