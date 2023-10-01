@@ -1,6 +1,6 @@
 import { AspectRatio, Overlay } from '@mantine/core';
 
-export function Video() {
+export default function Video() {
     const videoSource = "/video.mp4";
 
   return (

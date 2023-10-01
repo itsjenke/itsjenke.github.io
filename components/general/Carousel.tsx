@@ -17,6 +17,7 @@ const useStyles = createStyles((theme) => ({
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     marginTop: theme.spacing.xl,
+    boxShadow: theme.shadows.md
   },
 
   category: {
@@ -91,7 +92,7 @@ const data = [
   },
 ];
 
-export function CardsCarousel() {
+export default function CardsCarousel() {
   const { classes } = useStyles();
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);

@@ -1,6 +1,8 @@
-import { FooterSocial } from '../../components/general/Footer';
-import { HeaderResponsive } from '../../components/general/Header';
-import { Impressum } from '../../components/general/Impressum';
+import dynamic from 'next/dynamic';
+
+const HeaderResponsive = dynamic(() => import('../../components/general/Header'));
+const Impressum = dynamic(() => import('../../components/general/Impressum'));
+const FooterSocial = dynamic(() => import('../../components/general/Footer'));
 
 export default function Home() {
 

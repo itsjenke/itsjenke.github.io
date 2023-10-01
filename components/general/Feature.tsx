@@ -8,7 +8,6 @@ import {
     Col,
     rem,
     Container,
-    useMantineTheme,
   } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
   import { IconPalette, IconWorldUpload } from '@tabler/icons-react';
@@ -40,17 +39,16 @@ import { useMediaQuery } from '@mantine/hooks';
     {
       icon: IconPalette,
       title: 'Grafikdesign',
-      description: 'Hier steht was über Grafikdesign, vielleicht was ich schon gemacht hab oder was ich eben so anbiete. bin noch unsicher okay Bluni.',
+      description: 'Flyer, Plakate, Poster, Visitenkarten. Lass deiner Kreativität freien Lauf. Auf was hast du Lust?',
     },
     {
       icon: IconWorldUpload,
       title: 'Webentwicklung',
-      description:
-        'Hier steht was über Webentwickling, vielleicht was ich schon gemacht hab oder was ich eben so anbiete. bin noch unsicher okay Bluni.',
+      description: 'Onepager, Multipager, Online-Shop. Individuelle Lösungen für deinen Internetauftritt. Womit fangen wir an?',
     },
   ];
   
-  export function FeaturesTitle() {
+  export default function FeaturesTitle() {
     const { classes } = useStyles();
     const isMobile = useMediaQuery('(max-width: 768px)');
   
@@ -87,10 +85,10 @@ import { useMediaQuery } from '@mantine/hooks';
         <Grid gutter={isMobile ? 30 : 80} className={classes.wrapper}>
           <Col span={12} md={5}>
             <Title className={classes.title} order={2}>
-              Hier steht ein wichtiger Einleitungstext
+              Let&apos;s go!
             </Title>
             <Text>
-              Hier steht was über die zwei Dinge die ich anbieten werde.
+              Egal ob Grafikdesign oder individuelle Wordpress-Lösungen. Ich steh an Deiner Seite um deine Ideen lösungsorientiert und kreativ umzusetzen.
             </Text>
           </Col>
           <Col span={12} md={7}>

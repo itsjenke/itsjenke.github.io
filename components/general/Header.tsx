@@ -31,7 +31,7 @@ const useStyles = createStyles((theme) => ({
 
 }));
 
-export function HeaderResponsive() {
+export default function HeaderResponsive() {
   const { classes } = useStyles();
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const theme = useMantineTheme();

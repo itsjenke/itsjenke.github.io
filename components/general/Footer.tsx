@@ -31,11 +31,11 @@ const useStyles = createStyles((theme) => ({
 
   link: {
     textDecoration: 'none',
-    color: theme.white
+    color: theme.colorScheme === 'dark' ? theme.colors.white : theme.colors.dark[6],
   }
 }));
 
-export function FooterSocial() {
+export default function FooterSocial() {
   const { classes } = useStyles();
 
   return (

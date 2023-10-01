@@ -1,9 +1,11 @@
-import { FooterSocial } from '../../components/general/Footer';
-import { FeaturesTitle } from '../../components/general/Feature';
-import { HeroContentLeft } from '../../components/general/Hero';
-import { CardsCarousel } from '../../components/general/Carousel';
-import { HeaderResponsive } from '../../components/general/Header';
-import { ArticlesCardsGrid } from '../../components/general/Card';
+import dynamic from 'next/dynamic';
+
+const HeaderResponsive = dynamic(() => import('../../components/general/Header'));
+const HeroContentLeft = dynamic(() => import('../../components/general/Hero'));
+const FeaturesTitle = dynamic(() => import('../../components/general/Feature'));
+const CardsCarousel = dynamic(() => import('../../components/general/Carousel'));
+const ArticlesCardsGrid = dynamic(() => import('../../components/general/Card'));
+const FooterSocial = dynamic(() => import('../../components/general/Footer'));
 
 export default function Home() {
 

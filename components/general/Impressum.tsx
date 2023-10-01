@@ -9,7 +9,7 @@ const useStyles = createStyles((theme) => ({
 
   }));
 
-export function Impressum() {
+export default function Impressum() {
 const { classes } = useStyles();
 
   return (

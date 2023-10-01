@@ -78,7 +78,7 @@ const useStyles = createStyles((theme) => ({
   }
 }));
 
-export function HeroContentLeft() {
+export default function HeroContentLeft() {
   const { classes } = useStyles();
   const videoSource = "video.mp4";
   const isMobile = useMediaQuery('(max-width: 768px)');
