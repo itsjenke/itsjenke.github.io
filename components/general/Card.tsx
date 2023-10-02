@@ -8,7 +8,7 @@ const mockdata = [
     title: 'Die KulturLoge Dresden vermittelt freie Plätze in Kultur- und Sportveranstaltungen an Menschen, die sonst keinen oder nur einen eingeschränkten Zugang zu Kunst und Kultur haben. Mit einer individuellen Wordpress-Lösung konnte eine Online-Anmeldung sowie eine Kalender-Übersicht realisiert werden.',
     image:
       'kulturloge.webp',
-    date: 'KULTURLOGE DRESDEN',
+    date: 'KulturLoge Dresden',
     alt: 'KulturLoge Dresden Screenshot',
     link: 'https://kulturloge-dresden.de',
   },
@@ -16,7 +16,7 @@ const mockdata = [
     title: 'Potsdam glänzt mit Vielfalt an Kultur-, Sport- und Freizeitangeboten. Sehr viele davon sind auch ohne Eintritt zugänglich. Der EintrittFrei Kalender sammelt übersichtlich diese Termine und ermöglicht es ebenso via Formular neue Veranstaltungen dem Kalender hinzuzufügen.',
     image:
       'eintrittfrei.webp',
-    date: 'EINTRITTFREI POTSDAM',
+    date: 'EintrittFrei Potsdam',
     alt: 'EintrittFrei Kalender Screenshot',
     link: 'https://eintrittfrei-potsdam.de',
   },
@@ -25,10 +25,11 @@ const mockdata = [
 const useStyles = createStyles((theme) => ({
   wrapper: {
     padding: `calc(${theme.spacing.xl} * 2) ${theme.spacing.xl}`,
+    color: theme.colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.dark[6],
   },
 
   card: {
-    background: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+    background: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[3],
     transition: 'transform 150ms ease, box-shadow 150ms ease',
     marginTop: theme.spacing.xl,
   },
@@ -39,7 +40,17 @@ const useStyles = createStyles((theme) => ({
 
   title: {
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    fontWeight: 300,
+    fontWeight: 400,
+    color: theme.colorScheme === 'dark' ? theme.colors.gray[3] : theme.colors.dark[6],
+  },
+
+  date: {
+    color: theme.colorScheme === 'dark' ? theme.colors.gray[3] : theme.colors.dark[6],
+  },
+
+  badge: {
+    color: theme.colorScheme === 'dark' ? theme.colors.dark[6] : '#64EBC4',
+    background: theme.colorScheme === 'dark' ? '#64EBC4' : theme.colors.dark[6],
   },
 
   icon: {
@@ -61,19 +72,19 @@ export default function ArticlesCardsGrid() {
             <Image src={article.image} className={classes.image} alt={article.alt} />
           </AspectRatio>
         </Grid.Col>  
-        <Grid.Col md={6} lg={4}>
-          <Text color="dimmed" size="md" transform="uppercase" weight={700} mt="md">
+        <Grid.Col md={6} lg={7}>
+          <Text className={classes.date} size="lg" weight={700} mt="md">
             {article.date}
           </Text>
-          <Text className={classes.title} mt={5}>
+          <Text className={classes.title} mt={15}>
             {article.title}
           </Text>
           <Grid className={classes.icon}>
-            <Grid.Col span={4}>
+            <Grid.Col>
               <Link
               href={article.link}
               target= "_blank">
-                <Badge leftSection={icon} size="lg">Live</Badge>
+                <Badge className={classes.badge} leftSection={icon} size="lg">Live</Badge>
               </Link>
             </Grid.Col>
           </Grid>

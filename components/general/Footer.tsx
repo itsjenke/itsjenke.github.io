@@ -7,7 +7,7 @@ const useStyles = createStyles((theme) => ({
   footer: {
     marginTop: rem(120),
     borderTop: `${rem(1)} solid ${
-      theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]
+      theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[2]
     }`,
   },
 
@@ -31,7 +31,7 @@ const useStyles = createStyles((theme) => ({
 
   link: {
     textDecoration: 'none',
-    color: theme.colorScheme === 'dark' ? theme.colors.white : theme.colors.dark[6],
+    color: theme.colorScheme === 'dark' ? theme.colors.gray[1] : theme.colors.gray[6],
   }
 }));
 

@@ -6,6 +6,7 @@ const useStyles = createStyles((theme) => ({
 
   wrapper: {
     padding: `calc(${theme.spacing.xl} * 2) ${theme.spacing.xl}`,
+    color: theme.colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.dark[6],
   },
 
   card: {
@@ -115,6 +116,7 @@ export default function CardsCarousel() {
       align="start"
       slidesToScroll={mobile ? 1 : 1}
       loop
+      dragFree
       controlsOffset="xs"
     >
       {slides}

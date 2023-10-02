@@ -14,7 +14,6 @@ import { useMediaQuery } from '@mantine/hooks';
   
   const useStyles = createStyles((theme) => ({
     wrapper: {
-      marginTop: - 50,
       position: 'relative',
       paddingTop: theme.spacing.xl,
       paddingBottom: theme.spacing.xl,
@@ -22,7 +21,8 @@ import { useMediaQuery } from '@mantine/hooks';
       paddingRight: theme.spacing.xs,
       marginBottom: theme.spacing.xl,
       borderRadius: 7,
-      background: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+      background: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[2],
+      color: theme.colorScheme === 'dark' ? theme.colors.gray[0] : theme.colors.dark[6],
     },
   
     title: {
@@ -31,7 +31,7 @@ import { useMediaQuery } from '@mantine/hooks';
       fontWeight: 900,
       lineHeight: 1.1,
       marginBottom: theme.spacing.md,
-      color: '#64EBC4',
+      color: theme.colorScheme === 'dark' ? '#64EBC4' : theme.colors.dark[6],
     },
   }));
   
@@ -72,7 +72,7 @@ import { useMediaQuery } from '@mantine/hooks';
           </Grid.Col>
         
           <Grid.Col>  
-          <Text fz="sm">
+          <Text fz="md">
             {feature.description}
           </Text>
           </Grid.Col>
@@ -81,7 +81,7 @@ import { useMediaQuery } from '@mantine/hooks';
     ));
   
     return (
-      <Container size="xl" >
+      <Container size="xl" mt="xs">
         <Grid gutter={isMobile ? 30 : 80} className={classes.wrapper}>
           <Col span={12} md={5}>
             <Title className={classes.title} order={2}>
@@ -92,7 +92,7 @@ import { useMediaQuery } from '@mantine/hooks';
             </Text>
           </Col>
           <Col span={12} md={7}>
-            <SimpleGrid cols={2} spacing={30} breakpoints={[{ maxWidth: 'md', cols: 1 }]}>
+            <SimpleGrid cols={2} spacing={isMobile ? 40 : 70} breakpoints={[{ maxWidth: 'md', cols: 1 }]}>
               {items}
             </SimpleGrid>
           </Col>

@@ -60,12 +60,17 @@ const useStyles = createStyles((theme) => ({
 
   control: {
     marginTop: `calc(${theme.spacing.xl} * 1.5)`,
-    background: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[5],
+    background: theme.colors.dark[6],
+    color: '#64EBC4',
     borderRadius: 7,
 
     [theme.fn.smallerThan('sm')]: {
       width: '100%',
     },
+
+    '&:hover': {
+      background: theme.colors.dark[8],
+    }
   },
 
   video: {
@@ -73,8 +78,8 @@ const useStyles = createStyles((theme) => ({
   },
 
   mark: {
-    background: '#64EBC4',
-    color: '#0A0E2D',
+    background: theme.colorScheme === 'dark' ? '#64EBC4' : theme.colors.gray[0],
+    color: theme.colors.dark[6],
   }
 }));
 
@@ -102,7 +107,7 @@ export default function HeroContentLeft() {
         Ich bin Jörg, dein Experte für schnörkelose Webentwicklung und Grafikdesign. </mark>
         </Title>
         <Link href="mailto:hello@jenke.xyz" >
-        <Button variant="filled" color="cyan" size="md" className={classes.control}>
+        <Button variant="filled" size="md" className={classes.control}>
           Schreib mir
         </Button>
         </Link>
