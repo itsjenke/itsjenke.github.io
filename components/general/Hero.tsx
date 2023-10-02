@@ -78,7 +78,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   mark: {
-    background: theme.colorScheme === 'dark' ? '#64EBC4' : theme.colors.gray[0],
+    background: '#64EBC4',
     color: theme.colors.dark[6],
   }
 }));
