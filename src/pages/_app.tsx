@@ -20,7 +20,7 @@ export default function App(props: AppProps) {
   return (
     <>
       <Head>
-        <title>Jörg Jenke - Portfolio</title>
+        <title>Jörg Jenke - Webentwicklung und Grafikdesign</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
       </Head>
 
