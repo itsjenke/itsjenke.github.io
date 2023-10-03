@@ -33,6 +33,10 @@ import { useMediaQuery } from '@mantine/hooks';
       marginBottom: theme.spacing.md,
       color: theme.colorScheme === 'dark' ? '#64EBC4' : theme.colors.dark[6],
     },
+
+    featureTitle: {
+      color: theme.colorScheme === 'dark' ? '#64EBC4' : theme.colors.dark[6],
+    }
   }));
   
   const features = [
@@ -66,7 +70,7 @@ import { useMediaQuery } from '@mantine/hooks';
           </ThemeIcon>
           </Grid.Col>
           <Grid.Col span="content">
-          <Text fz="xl" mt="sm" fw={500}>
+          <Text fz="xl" mt="sm" fw={500} className={classes.featureTitle}>
             {feature.title}
           </Text>
           </Grid.Col>

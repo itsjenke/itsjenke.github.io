@@ -10,7 +10,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   card: {
-    height: rem(590),
+    height: rem(580),
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
@@ -41,7 +41,7 @@ function Card({ image, category }: CardProps) {
   return (
     <MediaQuery
       query="(max-width: 768px)"
-      styles={{ height: rem(450) }}
+      styles={{ height: rem(490) }}
     >
     <Paper
       shadow="lg"
@@ -111,8 +111,8 @@ export default function CardsCarousel() {
     <Title order={2}>Grafikdesign</Title>
     <Carousel
       slideSize="33.333333%"
-      breakpoints={[{ maxWidth: 'md', slideSize: '100%', slideGap: rem(2) }]}
-      slideGap="xl"
+      breakpoints={[{ maxWidth: 'md', slideSize: '100%'}]}
+      slideGap={mobile ? "xl" : "md"}
       align="start"
       slidesToScroll={mobile ? 1 : 1}
       loop

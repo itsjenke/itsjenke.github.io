@@ -1,5 +1,5 @@
 import { createStyles, SimpleGrid, Card, Image, Text, Container, AspectRatio, Title, Grid, ThemeIcon, rem, Badge, Group } from '@mantine/core';
-import { IconExternalLink, IconBrandWordpress } from '@tabler/icons-react';
+import { IconExternalLink } from '@tabler/icons-react';
 import Link from 'next/link';
 import { useMediaQuery } from '@mantine/hooks';
 
@@ -45,7 +45,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   date: {
-    color: theme.colorScheme === 'dark' ? theme.colors.gray[3] : theme.colors.dark[6],
+    color: theme.colorScheme === 'dark' ? '#64EBC4' : theme.colors.dark[6],
   },
 
   badge: {
@@ -88,11 +88,6 @@ export default function ArticlesCardsGrid() {
               </Link>
             </Grid.Col>
           </Grid>
-          {/* <Grid align="flex-end" mt="xl">
-          <ThemeIcon variant="light" size={40} color="gray" >
-            <IconBrandWordpress size={30} stroke={1.5} />
-          </ThemeIcon>
-          </Grid> */}
         </Grid.Col>
       </Grid>  
     </Card>
