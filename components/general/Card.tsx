@@ -13,7 +13,7 @@ const mockdata = [
     link: 'https://kulturloge-dresden.de',
   },
   {
-    title: 'Potsdam glänzt mit Vielfalt an Kultur-, Sport- und Freizeitangeboten. Sehr viele davon sind auch ohne Eintritt zugänglich. Der EintrittFrei Kalender sammelt übersichtlich diese Termine und ermöglicht es ebenso via Formular neue Veranstaltungen dem Kalender hinzuzufügen.',
+    title: 'Potsdam glänzt mit Vielfalt an Kultur-, Sport- und Freizeitangeboten. Sehr viele davon sind auch ohne Eintritt zugänglich. Der EintrittFrei Kalender sammelt übersichtlich diese Termine und ermöglicht es, ebenso via Formular neue Veranstaltungen dem Kalender hinzuzufügen.',
     image:
       'eintrittfrei.webp',
     date: 'EintrittFrei Potsdam',

@@ -88,7 +88,7 @@ import { useMediaQuery } from '@mantine/hooks';
               Let&apos;s go!
             </Title>
             <Text>
-              Egal ob Grafikdesign oder individuelle Wordpress-Lösungen. Ich steh an Deiner Seite um deine Ideen lösungsorientiert und kreativ umzusetzen.
+              Egal ob Grafikdesign oder individuelle Wordpress-Lösungen: Ich steh an deiner Seite, um deine Ideen lösungsorientiert und kreativ umzusetzen. 
             </Text>
           </Col>
           <Col span={12} md={7}>
