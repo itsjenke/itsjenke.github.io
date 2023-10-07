@@ -1,6 +1,18 @@
-import { createStyles, Overlay, Container, Title, Button, Text, rem, AspectRatio } from '@mantine/core';
+import React, { useState } from 'react';
+import {
+  createStyles,
+  Overlay,
+  Container,
+  Title,
+  Button,
+  Text,
+  rem,
+  AspectRatio,
+  Image
+} from '@mantine/core';
 import { useMediaQuery, useViewportSize } from '@mantine/hooks';
 import Link from 'next/link';
+
 
 const useStyles = createStyles((theme) => ({
 
@@ -85,26 +97,39 @@ const useStyles = createStyles((theme) => ({
 
 export default function HeroContentLeft() {
   const { classes } = useStyles();
-  const videoSource = "video.mp4";
+  const videoSource = '/video.mp4';
   const isMobile = useMediaQuery('(max-width: 768px)');
   const { height } = useViewportSize();
 
   return (
-    <div className={classes.video}  style={{ height:height - 100}} >
-      <div style={{ position: 'relative', zIndex: 0, height:height - 100 }}>
-        <AspectRatio ratio={isMobile ? 9 / 16 : 16 / 9}>
-          <video style={{ height:height - 100, background: "#000" }} muted playsInline autoPlay loop poster="poster.webp" id="video-id" className="video">
-            <source src={videoSource} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </AspectRatio>
-        <Overlay style={{ height:height - 100 }} gradient="linear-gradient(145deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 30%)" opacity={0.85} className={classes.overlay} />
+    <div className={classes.video} style={{ height: height - 100 }}>
+      <div style={{ position: 'relative', zIndex: 0, height: height - 100 }}>
+          <AspectRatio ratio={isMobile ? 9 / 16 : 16 / 9}>
+            <video
+              style={{ height: height - 100, background: '#000' }}
+              muted
+              playsInline
+              autoPlay
+              loop
+              id="video-id"
+              className="video"
+            >
+              <source src={videoSource} type="video/mp4" />
+              Your browser does not support the video tag.
+           </video>
+          </AspectRatio>
+        <Overlay
+          style={{ height: height - 100 }}
+          gradient="linear-gradient(145deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 30%)"
+          opacity={0.85}
+          className={classes.overlay}
+        />
       </div>
 
       <Container className={classes.container} size="xl">
         <Text className={classes.title}><mark className={classes.mark}>Hi.</mark></Text>
         <Title className={classes.description}  weight={500} size="h3" mt="xl"><mark className={classes.mark}>
-        Ich bin Jörg, dein Experte für schnörkelose Webentwicklung und Grafikdesign. </mark>
+        Ich bin Jörg, dein Experte für schnörkellose Webentwicklung und Grafikdesign. </mark>
         </Title>
         <Link href="mailto:hello@jenke.xyz" >
         <Button variant="filled" size="md" className={classes.control}>
@@ -112,7 +137,7 @@ export default function HeroContentLeft() {
         </Button>
         </Link>
       </Container>
-      <div>
+      <div> 
     </div>
     </div>
   );
