@@ -132,7 +132,7 @@ export default function HeroContentLeft() {
         Ich bin Jörg, dein Experte für schnörkellose Webentwicklung und Grafikdesign. </mark>
         </Title>
         <Link href="mailto:hello@jenke.xyz" >
-        <Button variant="filled" size="md" className={classes.control}>
+        <Button variant="filled" size="md" className={classes.control} aria-label='Mail Button'>
           Schreib mir
         </Button>
         </Link>

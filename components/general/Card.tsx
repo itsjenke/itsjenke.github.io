@@ -83,7 +83,7 @@ export default function ArticlesCardsGrid() {
             <Grid.Col>
               <Link
               href={article.link}
-              target= "_blank">
+              target= "_blank" aria-label='Live Button'>
                 <Badge className={classes.badge} leftSection={icon} size="lg">Live</Badge>
               </Link>
             </Grid.Col>
