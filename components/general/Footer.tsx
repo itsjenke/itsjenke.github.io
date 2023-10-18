@@ -1,5 +1,5 @@
 import { createStyles, Container, Group, ActionIcon, rem, Text, NavLink } from '@mantine/core';
-import { IconBrandLinkedin, IconBrandInstagram } from '@tabler/icons-react';
+import { IconBrandLinkedin, IconBrandInstagram, IconBrandGithub } from '@tabler/icons-react';
 import Logo from "../graphic/Logo"; 
 import Link from 'next/link';
 
@@ -54,6 +54,11 @@ export default function FooterSocial() {
           <Link href="https://www.instagram.com/itsjenke/">
             <ActionIcon size="lg">
               <IconBrandInstagram size="2.05rem" stroke={1} />
+            </ActionIcon>
+          </Link>
+          <Link href="https://github.com/itsjenke/">
+            <ActionIcon size="lg">
+              <IconBrandGithub size="2.05rem" stroke={1} />
             </ActionIcon>
           </Link>
         </Group>

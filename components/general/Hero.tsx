@@ -29,7 +29,7 @@ const useStyles = createStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'flex-end',
     alignItems: 'flex-start',
-    paddingBottom: `calc(${theme.spacing.xl} * 9)`,
+    paddingBottom: `calc(${theme.spacing.lg} * 9)`,
     position: 'absolute',
     right: 0,
     bottom: 0,
