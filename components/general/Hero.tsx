@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import {
   createStyles,
   Overlay,
@@ -10,8 +10,9 @@ import {
   AspectRatio,
   Image
 } from '@mantine/core';
-import { useMediaQuery, useViewportSize } from '@mantine/hooks';
+import { useIntersection, useMediaQuery, useViewportSize } from '@mantine/hooks';
 import Link from 'next/link';
+import Head from 'next/head';
 
 
 const useStyles = createStyles((theme) => ({
@@ -110,17 +111,28 @@ export default function HeroContentLeft() {
   const isMobile = useMediaQuery('(max-width: 768px)');
   const { height } = useViewportSize();
   const poster = 'poster.webp'; 
-  const [videoLoaded, setVideoLoaded] = useState(false);
 
-  const handleVideoLoad = () => {
-    setVideoLoaded(true);
-  };
+  // we only show the video when it is in the viewport to unblock the page loading
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { ref, entry } = useIntersection({
+    root: containerRef.current,
+    threshold: 0,
+  });
 
   return (
+    <>
+    {/* preload placeholder image for video to make sure this is shown right away while the video loads */}
+    <Head>
+      <link
+        rel="preload"
+        href="poster.webp"
+        as="image"
+      />
+    </Head>
     <div className={classes.video} style={{ height: height - 100 }}>
-      <div style={{ position: 'relative', zIndex: 0, height: height - 100 }}>
+      <div style={{ position: 'relative', zIndex: 0, height: height - 100 }} ref={ref}>
           <AspectRatio ratio={isMobile ? 9 / 16 : 16 / 9}>
-          {videoLoaded ? (
+          {entry?.isIntersecting ? (
             <video
               style={{ height: height - 100, background: '#000' }}
               muted
@@ -129,19 +141,12 @@ export default function HeroContentLeft() {
               loop
               id="video-id"
               className="video"
-              onLoadedMetadata={handleVideoLoad}
+              poster={poster}
             >
               <source src={videoSource} type="video/mp4" />
               Your browser does not support the video tag.
            </video>
-          ) : (
-            <Image
-            src={poster}
-            alt="Preload Image"
-            fit="cover"
-            className={classes.poster}
-            />
-            )}
+          ) : null}
             </AspectRatio>
         <Overlay
           style={{ height: height - 100 }}
@@ -164,6 +169,6 @@ export default function HeroContentLeft() {
       </Container>
       <div> 
     </div>
-    </div>
+    </div></>
   );
 }
