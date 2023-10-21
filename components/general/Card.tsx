@@ -2,6 +2,7 @@ import { createStyles, SimpleGrid, Card, Image, Text, Container, AspectRatio, Ti
 import { IconExternalLink } from '@tabler/icons-react';
 import Link from 'next/link';
 import { useMediaQuery } from '@mantine/hooks';
+const Fade = require('react-reveal/Fade');
 
 const mockdata = [
   {
@@ -83,7 +84,7 @@ export default function ArticlesCardsGrid() {
             <Grid.Col>
               <Link
               href={article.link}
-              target= "_blank">
+              target= "_blank" aria-label='Live Button'>
                 <Badge className={classes.badge} leftSection={icon} size="lg">Live</Badge>
               </Link>
             </Grid.Col>
@@ -95,10 +96,12 @@ export default function ArticlesCardsGrid() {
 
   return (
     <Container py="xl" size="xl" className={classes.wrapper}>
+      <Fade left>
       <Title order={2}>Webentwicklung</Title>
       <SimpleGrid cols={1} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
         {cards}
       </SimpleGrid>
+      </Fade>
     </Container>
   );
 }

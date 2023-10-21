@@ -1,6 +1,7 @@
 import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
 import { createStyles, Paper, Text, Title, useMantineTheme, rem, Container, MediaQuery } from '@mantine/core';
+const Fade = require('react-reveal/Fade');
 
 const useStyles = createStyles((theme) => ({
 
@@ -105,6 +106,7 @@ export default function CardsCarousel() {
 
   return (
     <Container size="xl" className={classes.wrapper}>
+      <Fade left>
     <Title order={4}>
             PORTFOLIO
     </Title>
@@ -121,6 +123,7 @@ export default function CardsCarousel() {
     >
       {slides}
     </Carousel>
+    </Fade>
     </Container>
   );
 }
