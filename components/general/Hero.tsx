@@ -12,7 +12,7 @@ import {
 } from '@mantine/core';
 import { useMediaQuery, useViewportSize } from '@mantine/hooks';
 import Link from 'next/link';
-
+const Fade = require('react-reveal/Fade');
 
 const useStyles = createStyles((theme) => ({
 
@@ -125,18 +125,19 @@ export default function HeroContentLeft() {
           className={classes.overlay}
         />
       </div>
-
-      <Container className={classes.container} size="xl">
-        <Text className={classes.title}><mark className={classes.mark}>Hi.</mark></Text>
-        <Title className={classes.description}  weight={500} size="h3" mt="xl"><mark className={classes.mark}>
-        Ich bin Jörg, dein Experte für schnörkellose Webentwicklung und Grafikdesign. </mark>
-        </Title>
-        <Link href="mailto:hello@jenke.xyz" >
-        <Button variant="filled" size="md" className={classes.control} aria-label='Mail Button'>
-          Schreib mir
-        </Button>
-        </Link>
-      </Container>
+        <Container className={classes.container} size="xl">
+          <Fade left>
+          <Text className={classes.title}><mark className={classes.mark}>Hi.</mark></Text>
+          <Title className={classes.description}  weight={500} size="h3" mt="xl"><mark className={classes.mark}>
+          Ich bin Jörg, dein Experte für schnörkellose Webentwicklung und Grafikdesign. </mark>
+          </Title>
+          <Link href="mailto:hello@jenke.xyz" >
+          <Button variant="filled" size="md" className={classes.control} aria-label='Mail Button'>
+            Schreib mir
+          </Button>
+          </Link>
+          </Fade>
+        </Container>
       <div> 
     </div>
     </div>
