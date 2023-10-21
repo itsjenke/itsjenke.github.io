@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import {
   createStyles,
   Overlay,
@@ -10,8 +10,9 @@ import {
   AspectRatio,
   Image
 } from '@mantine/core';
-import { useMediaQuery, useViewportSize } from '@mantine/hooks';
+import { useIntersection, useMediaQuery, useViewportSize } from '@mantine/hooks';
 import Link from 'next/link';
+import Head from 'next/head';
 const Fade = require('react-reveal/Fade');
 
 const useStyles = createStyles((theme) => ({
@@ -92,19 +93,46 @@ const useStyles = createStyles((theme) => ({
   mark: {
     background: '#64EBC4',
     color: theme.colors.dark[6],
-  }
+  },
+
+  poster: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    zIndex: 2,
+  },
 }));
 
 export default function HeroContentLeft() {
   const { classes } = useStyles();
-  const videoSource = '/video.mp4';
+  const videoSource = 'video.mp4';
   const isMobile = useMediaQuery('(max-width: 768px)');
   const { height } = useViewportSize();
+  const poster = 'poster.webp'; 
+
+  // we only show the video when it is in the viewport to unblock the page loading
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { ref, entry } = useIntersection({
+    root: containerRef.current,
+    threshold: 0,
+  });
 
   return (
+    <>
+    {/* preload placeholder image for video to make sure this is shown right away while the video loads */}
+    <Head>
+      <link
+        rel="preload"
+        href="poster.webp"
+        as="image"
+      />
+    </Head>
     <div className={classes.video} style={{ height: height - 100 }}>
-      <div style={{ position: 'relative', zIndex: 0, height: height - 100 }}>
+      <div style={{ position: 'relative', zIndex: 0, height: height - 100 }} ref={ref}>
           <AspectRatio ratio={isMobile ? 9 / 16 : 16 / 9}>
+          {entry?.isIntersecting ? (
             <video
               style={{ height: height - 100, background: '#000' }}
               muted
@@ -113,11 +141,13 @@ export default function HeroContentLeft() {
               loop
               id="video-id"
               className="video"
+              poster={poster}
             >
               <source src={videoSource} type="video/mp4" />
               Your browser does not support the video tag.
            </video>
-          </AspectRatio>
+          ) : null}
+            </AspectRatio>
         <Overlay
           style={{ height: height - 100 }}
           gradient="linear-gradient(145deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 30%)"
@@ -140,6 +170,6 @@ export default function HeroContentLeft() {
         </Container>
       <div> 
     </div>
-    </div>
+    </div></>
   );
 }
