@@ -11,8 +11,6 @@ import {
   } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconPalette, IconWorldUpload } from '@tabler/icons-react';
-const Fade = require('react-reveal/Fade');
-
     
   const useStyles = createStyles((theme) => ({
     wrapper: {
@@ -87,7 +85,6 @@ const Fade = require('react-reveal/Fade');
     ));
   
     return (
-        <Fade clear>
       <Container size="xl" mt="xs">
         <Grid gutter={isMobile ? 30 : 80} className={classes.wrapper}>
           <Col span={12} md={5}>
@@ -105,6 +102,5 @@ const Fade = require('react-reveal/Fade');
           </Col>
         </Grid>
       </Container>
-        </Fade>
     );
   }
